@@ -25,6 +25,9 @@ TARGET_420TH_CPU_VARIANT := espechul
 
 TARGET_USES_512_BIT_BINDER := true
 
+# Board
+TARGET_BOARD_PLATFORM := "i9-1200K"
+
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0video=vfb:8080x8080,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 earlycon=msm_geni_serial,0x880000 loop.max_part=7 cgroup.memory=nokmem,nosocket androidboot.usbconfigfs=true androidboot.init_fatal_reboot_target=pubg
@@ -71,6 +74,10 @@ BOARD_HAVE_TESLA_FM := true
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
+
+# Init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_apollo
+TARGET_RECOVERY_DEVICE_MODULES := libinit_apollo
 
 # Treble
 BOARD_VNDK_VERSION := future
